@@ -1,9 +1,9 @@
 import employe from "../Model/Employe.js";
 
 export const AddEmploye = async (req, res) => {
-  const { name, Position, email, phone, address, salary } = req.body;
+  const { name, position, email, phone, address, salary } = req.body;
 
-  if (!name || !Position || !email || !salary) {
+  if (!name || !position || !email || !salary) {
     return res.status(422).json({
       errorMsg: "Please fill all the details",
     });
@@ -11,7 +11,7 @@ export const AddEmploye = async (req, res) => {
   try {
     const add = new employe({
       name,
-      Position,
+      position,
       email,
       phone,
       address,
